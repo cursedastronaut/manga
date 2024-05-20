@@ -9,8 +9,7 @@
 }
 
 .preview {
-	max-height: 256px;
-	max-width: calc(10% - 16px);
+	max-width: 10%;
 	display: flex;
 	flex-flow: column;
 	padding: 8px;
@@ -22,8 +21,7 @@
 }
 
 .preview:hover {
-	max-height: 320px;
-	max-width: calc(10%);
+	max-width: 12%;
 }
 
 body {
@@ -33,7 +31,7 @@ body {
 }
 
 a {
-	font-size: xx-large;
+	/*font-size: xx-large;*/
 	font-family: system-ui;
 	text-decoration: none;
 	color: white;
