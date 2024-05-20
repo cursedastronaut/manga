@@ -4,6 +4,11 @@
 </head>
 <body>
 	<?php
+
+	if (!file_exists('content')) {
+		mkdir('content', 0777, true);
+	}
+
 	if (is_null($_GET["folder"]) && is_null($_GET["download"])) {
 		include("res/php/root.php");
 	} else if (is_null($_GET["download"])) {
