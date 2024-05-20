@@ -8,6 +8,9 @@
 	if (!file_exists('content')) {
 		mkdir('content', 0777, true);
 	}
+	if (!file_exists('zip')) {
+		mkdir('zip', 0777, true);
+	}
 
 	if (is_null($_GET["folder"]) && is_null($_GET["download"])) {
 		include("res/php/root.php");
