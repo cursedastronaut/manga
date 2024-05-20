@@ -4,10 +4,23 @@
 </head>
 <body>
 	<?php
-	if (is_null($_GET["folder"])) {
+	if (is_null($_GET["folder"]) && is_null($_GET["download"])) {
 		include("res/php/root.php");
-	} else {
+	} else if (is_null($_GET["download"])) {
 		include("res/php/subfolder.php");
+	} else {
+		include("res/php/zip.php");
+
+		$zipFile = $_GET["download"];
+		$zipFile = str_replace("\\", "-", $zipFile);
+		$zipFile = str_replace("/", "-", $zipFile);
+		$zipFile = str_replace("\"", "-", $zipFile);
+		$zipFile = str_replace("'", "-", $zipFile);
+		$zipFile = str_replace(" ", "_", $zipFile);
+		$zipFile = str_replace(" ", "_", $zipFile);
+
+		createZipFromDir($_GET["download"], "zip/" . $zipFile . ".zip");
+		redirectToZip("zip/" . $zipFile . ".zip");
 	}
 	?>
 </body>

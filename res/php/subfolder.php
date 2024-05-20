@@ -19,3 +19,5 @@
 		}
 	}
 ?>
+
+<button onclick="location.href='index.php?download=<?php echo $dir; ?>'">Download all images as a ZIP</button>
